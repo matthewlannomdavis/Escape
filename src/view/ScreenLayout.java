@@ -1,18 +1,19 @@
 package view;
+
 import model.Player;
 
 public class ScreenLayout {
-	private StatsPanel statsPanel = new StatsPanel();
-	private ButtonPanel buttonPanel = new ButtonPanel();
-	private BagPanel bagPanel = new BagPanel();
-	private ProgressPanel progressPanel = new ProgressPanel();
-	private DescriptionPanel descriptionPanel = new DescriptionPanel();
-	
-	public void Update(Player aPlayer) {
-		statsPanel.Update(aPlayer);
-		buttonPanel.Update(aPlayer);
-		bagPanel.Update(aPlayer);
-		progressPanel.Update(aPlayer);
-		descriptionPanel.Update(aPlayer);
-	}
+    private StatsPanel statsPanel = new view.StatsPanel();
+    private ButtonPanel buttonPanel = new view.ButtonPanel();
+    private BagPanel bagPanel = new view.BagPanel();
+    private ProgressPanel progressPanel = new view.ProgressPanel();
+    private DescriptionPanel descriptionPanel = new view.DescriptionPanel();
+
+    public void Update(Player aPlayer) {
+        statsPanel.update(aPlayer);
+        buttonPanel.update(aPlayer);
+        bagPanel.update(aPlayer);
+        progressPanel.update(aPlayer);
+        descriptionPanel.update(aPlayer);
+    }
 }

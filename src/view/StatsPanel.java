@@ -1,14 +1,15 @@
-package View;
+package view;
+
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 import model.Player;
 
-
 public class StatsPanel extends JPanel {
     JLabel name, strength, speed, defense, dextarity, mind, flexibility, spirit, health;
-    public StatsPanel(){
+    
+    public StatsPanel() {
         name = new JLabel("nobody");
         strength = new JLabel("0");
         speed = new JLabel("0");
@@ -34,7 +35,7 @@ public class StatsPanel extends JPanel {
         this.add(new JLabel("Flexibilty"));
         this.add(flexibility);
     }
-    public void update(Player aPlayer){
-        
+    
+    public void update(Player aPlayer){    
     }
 }
