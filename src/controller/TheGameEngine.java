@@ -9,12 +9,15 @@ public class TheGameEngine {
 
     //init basic needed objects
     //gui, player, rooms, and other calls
-    TheView View;
-    Player ThePlayer;
+    TheView view;
+    Player thePlayer;
     
     //generate gui
     public void startGame(){
-        // 0. Print banner
+        view = new TheView();
+        thePlayer = new Player();
+        
+                // 0. Print banner
 		System.out.println("Welcome to Escape!");
 		
 		// 1. Create character

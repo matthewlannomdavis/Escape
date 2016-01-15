@@ -9,6 +9,7 @@ public class DescriptionPanel extends JPanel {
     JScrollPane scroller;
     JTextArea textArea;
     public DescriptionPanel(){
+    super();
     textArea= new JTextArea(25, 40);
     textArea.setEditable(false);
     textArea.setLineWrap(true);
@@ -17,6 +18,8 @@ public class DescriptionPanel extends JPanel {
     scroller.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     scroller.setPreferredSize(new Dimension(450, 110));
+    add(scroller);
+    validate();
 }
 
     public void update(Player aPlayer) {
