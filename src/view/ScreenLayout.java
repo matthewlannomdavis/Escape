@@ -9,10 +9,10 @@ public class ScreenLayout {
 	private DescriptionPanel descriptionPanel = new DescriptionPanel();
 	
 	public void Update(Player aPlayer) {
-		statsPanel.Update(aPlayer);
-		buttonPanel.Update(aPlayer);
-		bagPanel.Update(aPlayer);
-		progressPanel.Update(aPlayer);
-		descriptionPanel.Update(aPlayer);
+		statsPanel.update(aPlayer);
+		buttonPanel.update(aPlayer);
+		bagPanel.update(aPlayer);
+		progressPanel.update(aPlayer);
+		descriptionPanel.update(aPlayer);
 	}
 }
