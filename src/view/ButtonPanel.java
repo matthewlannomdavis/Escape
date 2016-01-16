@@ -4,7 +4,6 @@ import model.Player;
 
 import javax.swing.JPanel;
 
-
 public class ButtonPanel extends JPanel {
    
    private Button move, search, bag; 
@@ -25,6 +24,9 @@ public class ButtonPanel extends JPanel {
     private void clearButtonArea(){
         removeAll();
         validate();
+    
+    public void update(Player aPlayer) {
+        
     }
 }
     
