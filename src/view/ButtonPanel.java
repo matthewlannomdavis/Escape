@@ -24,9 +24,10 @@ public class ButtonPanel extends JPanel {
     private void clearButtonArea(){
         removeAll();
         validate();
-    
+    }
     public void update(Player aPlayer) {
         
     }
+    
 }
     
