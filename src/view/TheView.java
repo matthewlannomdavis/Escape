@@ -3,6 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
+import model.Room;
 
 
 public class TheView {
@@ -23,11 +24,26 @@ public class TheView {
        descriptionPanel = new DescriptionPanel();
        buttonPanel = new ButtonPanel();
        statsPanel = new StatsPanel();
-       //this is for nothing
+       mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
+       mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
+       mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel); 
+    }
+    public void createScreen(){
+        //holds a basic layout for the screen
        mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
        mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
        mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel);
-       
     }
-    
+    public void basicButtonSet(){
+        buttonPanel.addBasicButtons();
+    }
+    public void movementButtonSet(Room aRoom){
+        button
+    }
+    public void updateDescription(String description){
+        
+    }
+    public void updatePlayerStates(){
+        
+    }
 }
