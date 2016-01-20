@@ -38,7 +38,7 @@ public class TheView {
         buttonPanel.addBasicButtons();
     }
     public void movementButtonSet(Room aRoom){
-        button
+        
     }
     public void updateDescription(String description){
         
