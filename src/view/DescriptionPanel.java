@@ -17,8 +17,19 @@ public class DescriptionPanel extends JPanel {
     scroller.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     scroller.setPreferredSize(new Dimension(450, 110));
+    scroller.validate();
 }
 
+    public void updateText(String text){
+        textArea.append("\n" + text );
+        scroller.revalidate();
+    }
+    public void clearAndUpdate(String text){
+        textArea.setText(text);
+    }
+    public void clearText(){
+        textArea.setText("");
+    }
     public void update(Player aPlayer) {
 	Room room = aPlayer.getCurrentRoom();
 	System.out.println(room.getDescription());

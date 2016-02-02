@@ -13,6 +13,10 @@ public class ButtonPanel extends JPanel {
        move = new Button("Move");
        search = new Button("search");
        bag = new Button("Bag");
+       
+       add(move);
+       add(search);
+       add(bag);
        validate();
    }
     public void addBasicButtons() {
@@ -24,6 +28,9 @@ public class ButtonPanel extends JPanel {
     private void clearButtonArea(){
         removeAll();
         validate();
+    }
+    public void movementButtons(){
+        
     }
     public void update(Player aPlayer) {
         

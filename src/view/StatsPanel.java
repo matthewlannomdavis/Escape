@@ -13,6 +13,13 @@ public class StatsPanel extends JPanel {
         name = new JLabel("nobody");
         strength = new JLabel("0");
         speed = new JLabel("0");
+        defense = new JLabel("0");
+        dextarity = new JLabel("0");
+        mind = new JLabel("0");
+        flexibility = new JLabel("0");
+        spirit = new JLabel("0");
+        health = new JLabel("0");
+        
         
         setSize(200,600);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));

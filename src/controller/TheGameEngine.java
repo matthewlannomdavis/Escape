@@ -9,25 +9,26 @@ public class TheGameEngine {
 
     //init basic needed objects
     //gui, player, rooms, and other calls
-    TheView View;
+    TheView view;
     Player ThePlayer;
     
     //generate gui
     public void startGame(){
         // 0. Print banner
-		System.out.println("Welcome to Escape!");
+	view = new TheView();	
+        System.out.println("Welcome to Escape!");
 		
-		// 1. Create character
-		Player player = new Player();
+	// 1. Create character
+	Player player = new Player();
 		
-		// Generate map
-		// TODO: Make this gooder. Right now, just adding a house and a "room" to the south of it.
-		Room room = new Room("Outside House", "You are standing outside of a house. It is white and made of brick. The front door is locked, but a window seems to be ajar. Before you is a closed mailbox.");
-		Room roomToTheSouth = new Room("South of House", "You are standing in a field south of the house. There's really nothing here.");
-		RoomEgress pathToTheSouth = new RoomEgress("s", roomToTheSouth, "There is a path leading to the south.");
-		RoomEgress pathToTheNorth = new RoomEgress("n", room, "There's an inviting path leading to the north. Much more interesting than what you see here.");
-		room.addRoomEgress(pathToTheSouth);
-		roomToTheSouth.addRoomEgress(pathToTheNorth);
+	// Generate map
+	// TODO: Make this gooder. Right now, just adding a house and a "room" to the south of it.
+	Room room = new Room("Outside House", "You are standing outside of a house. It is white and made of brick. The front door is locked, but a window seems to be ajar. Before you is a closed mailbox.");
+	Room roomToTheSouth = new Room("South of House", "You are standing in a field south of the house. There's really nothing here.");
+	RoomEgress pathToTheSouth = new RoomEgress("s", roomToTheSouth, "There is a path leading to the south.");
+	RoomEgress pathToTheNorth = new RoomEgress("n", room, "There's an inviting path leading to the north. Much more interesting than what you see here.");
+	room.addRoomEgress(pathToTheSouth);
+	roomToTheSouth.addRoomEgress(pathToTheNorth);
 
 		// Place character @ start location
 		player.setCurrentroom(room);

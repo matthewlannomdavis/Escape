@@ -27,12 +27,16 @@ public class TheView {
        mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
        mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
        mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel); 
+       
+       mainWindow.validate();
+       mainWindow.setVisible(true);
     }
     public void createScreen(){
         //holds a basic layout for the screen
        mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
        mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
        mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel);
+       mainWindow.validate();
     }
     public void basicButtonSet(){
         buttonPanel.addBasicButtons();
