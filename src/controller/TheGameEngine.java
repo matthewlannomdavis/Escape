@@ -17,7 +17,7 @@ public class TheGameEngine {
         // 0. Print banner
 	view = new TheView();	
         System.out.println("Welcome to Escape!");
-		
+	view.updateDescription("Welcome to Escape!");
 	// 1. Create character
 	Player player = new Player();
 		

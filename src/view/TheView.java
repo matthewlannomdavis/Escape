@@ -18,9 +18,9 @@ public class TheView {
     
     public TheView(){
        mainWindow = new JFrame("Escape");
-       mainWindow.setSize(600, 800);
+       mainWindow.setSize(800, 800);
        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
+       mainWindow.setResizable(false);
        descriptionPanel = new DescriptionPanel();
        buttonPanel = new ButtonPanel();
        statsPanel = new StatsPanel();
@@ -45,6 +45,7 @@ public class TheView {
         
     }
     public void updateDescription(String description){
+        descriptionPanel.updateText(description);
         
     }
     public void updatePlayerStates(){

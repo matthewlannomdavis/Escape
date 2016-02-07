@@ -9,7 +9,7 @@ public class ButtonPanel extends JPanel {
    private Button move, search, bag; 
    public ButtonPanel(){
        super();
-       setSize(400, 200);
+       setSize(600, 200);
        move = new Button("Move");
        search = new Button("search");
        bag = new Button("Bag");
