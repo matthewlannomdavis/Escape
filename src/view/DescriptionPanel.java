@@ -9,15 +9,24 @@ public class DescriptionPanel extends JPanel {
     JScrollPane scroller;
     JTextArea textArea;
     public DescriptionPanel(){
+    super();
+    this.setSize(600, 600);
     textArea= new JTextArea(25, 40);
     textArea.setEditable(false);
     textArea.setLineWrap(true);
     textArea.setWrapStyleWord(true);
+    textArea.setText(" ");
     scroller = new JScrollPane(textArea);
     scroller.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    scroller.setPreferredSize(new Dimension(450, 110));
+    scroller.setPreferredSize(new Dimension(550, 550));
+    this.add(scroller);
+    textArea.validate();
+    textArea.repaint();
     scroller.validate();
+    this.validate();
+    
+    
 }
 
     public void updateText(String text){
