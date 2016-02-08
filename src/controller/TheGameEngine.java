@@ -34,9 +34,9 @@ public class TheGameEngine {
 //        view.getNorthButton().addActionListener(new northButton());
     }
     
-    public void goNorth(){
+    public void movePlayer(String movementPath){
         // Goes north
-        System.out.println("went north");
+        System.out.println("movePlayer called");
     }
 }
 

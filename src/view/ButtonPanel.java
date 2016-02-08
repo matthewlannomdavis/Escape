@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 import model.Player;
 
 import javax.swing.JPanel;
+import model.Room;
 
 public class ButtonPanel extends JPanel {
    
@@ -21,7 +22,7 @@ public class ButtonPanel extends JPanel {
         search = new Button("search");
         bag = new Button("Bag");
 
-//       add(move);
+        add(move);
         add(north);
         add(west);
         add(east);
@@ -35,7 +36,7 @@ public class ButtonPanel extends JPanel {
     public void addBasicButtons() {
         clearButtonArea();
         
-        //add(move);
+        add(move);
         add(search);
         add(bag);
     }
@@ -45,8 +46,12 @@ public class ButtonPanel extends JPanel {
         validate();
     }
     
-    public void movementButtons(){
+    public void movementButtons(Room aRoom){
         
+        
+        for(int x = 0; x > aRoom.getAdjacentRooms().size(); x++){
+            
+        }
     }
     
     public void update(Player aPlayer) {

@@ -17,9 +17,15 @@ public class TheView {
     private ProgressPanel progressPane;
     private DescriptionPanel descriptionPanel;
     
-    class northButtonListener implements ActionListener{
+    class movementListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
-            parent.goNorth();
+            Object theListenedObject = event.getSource();
+            Button aButton = null;
+            if(theListenedObject instanceof Button){
+                aButton = (Button)theListenedObject;
+                parent.movePlayer(aButton.getText());
+        }
+            
         }
         
     }
@@ -37,7 +43,7 @@ public class TheView {
         mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
         mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel); 
-        buttonPanel.getNorthButton().addActionListener(new northButtonListener());
+        buttonPanel.getNorthButton().addActionListener(new movementListener());
         mainWindow.validate();
         mainWindow.setVisible(true);
     }
