@@ -63,7 +63,7 @@ public class TheView {
     }
     
     public void movementButtonSet(Room aRoom){
-        
+        buttonPanel.movementButtons(aRoom);
     }
     
     public void updateDescription(String description){

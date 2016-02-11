@@ -15,7 +15,7 @@ public class Room {
 		adjacentRooms.add(aRoomEgress);
 	}
 	
-	public void addRoomEgress(String aDirectionKey, Room aTargetRoom, String aEgressDescriptionText) {
+	public void addRoomEgress(model.RoomEgress.directionKey aDirectionKey, Room aTargetRoom, String aEgressDescriptionText) {
 		adjacentRooms.add(new RoomEgress(aDirectionKey, aTargetRoom, aEgressDescriptionText));
 	}
 	

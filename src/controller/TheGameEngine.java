@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 import model.*;
+import model.RoomEgress.directionKey;
 import view.*;
 
 public class TheGameEngine {
@@ -18,8 +19,8 @@ public class TheGameEngine {
 	// TODO: Make this gooder. Right now, just adding a house and a "room" to the south of it.
 	Room room = new Room("Outside House", "You are standing outside of a house. It is white and made of brick. The front door is locked, but a window seems to be ajar. Before you is a closed mailbox.");
 	Room roomToTheSouth = new Room("South of House", "You are standing in a field south of the house. There's really nothing here.");
-	RoomEgress pathToTheSouth = new RoomEgress("s", roomToTheSouth, "There is a path leading to the south.");
-	RoomEgress pathToTheNorth = new RoomEgress("n", room, "There's an inviting path leading to the north. Much more interesting than what you see here.");
+	RoomEgress pathToTheSouth = new RoomEgress(directionKey.South, roomToTheSouth, "There is a path leading to the south.");
+	RoomEgress pathToTheNorth = new RoomEgress(directionKey.North, room, "There's an inviting path leading to the north. Much more interesting than what you see here.");
 	room.addRoomEgress(pathToTheSouth);
 	roomToTheSouth.addRoomEgress(pathToTheNorth);
 
