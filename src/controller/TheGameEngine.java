@@ -37,7 +37,29 @@ public class TheGameEngine {
     
     public void movePlayer(String movementPath){
         // Goes north
-        System.out.println("movePlayer called");
+        for(int x = 0; x > player.getCurrentRoom().getAdjacentRooms().size(); x++){
+            if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() != null){
+                if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() == movementPath){
+                    player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
+                    roomEntranceEvent();
+                }else{
+                  //was not  a match continue the loop  
+                }
+            }else{
+            switch(player.getCurrentRoom().getAdjacentRooms().get(x).direction){
+                case North:
+                    break;
+                default:
+                    view.updateDescription("opps an error occured in moving the player");
+                    break;
+                }
+            }
+    }
+}
+
+    private void roomEntranceEvent() {
+        view.updateDescription(player.getCurrentRoom().getDescription());
+        view.basicButtonSet();
     }
 }
 

@@ -6,18 +6,18 @@ public class RoomEgress {
         public directionKey direction;
 	private Room targetRoom;
 	private String egressDescriptionText;
-	private String otherKey;
+	private String theCaption = null;
         
 	public RoomEgress(directionKey aDirectionKey, Room aTargetRoom, String aEgressDescriptionText) {
 		this.direction = aDirectionKey;
 		targetRoom = aTargetRoom;
 		egressDescriptionText = aEgressDescriptionText;
 	}
-        public RoomEgress(directionKey aDirectionKey, Room aTargetRoom, String aEgressDescriptionText, String anotherKey) {
+        public RoomEgress(directionKey aDirectionKey, Room aTargetRoom, String aEgressDescriptionText, String caption) {
 		this.direction = aDirectionKey;
 		targetRoom = aTargetRoom;
 		egressDescriptionText = aEgressDescriptionText;
-                otherKey = anotherKey;
+                theCaption = caption;
 	}
 	
 	public String getEgressDescriptionText() {
@@ -46,7 +46,7 @@ public class RoomEgress {
 	public Room getTargetRoom() {
 		return targetRoom;
 	}
-        public String getOtherKey(){
-            return otherKey;
+        public String getTheCaption(){
+            return theCaption;
         }
 }

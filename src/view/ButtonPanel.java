@@ -48,22 +48,45 @@ public class ButtonPanel extends JPanel {
         for(int x = 0; x > aRoom.getAdjacentRooms().size(); x++){
             switch(aRoom.getAdjacentRooms().get(x).direction){
                 case North:
+                    if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
+                        north.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }else{
+                        north.setText("North");
+                    }
                     add(north);
                     break;
                 case East:
+                    if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
+                        east.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }else{
+                        east.setText("East");
+                    }
                     add(east);
                     break;
                 case South:
+                    if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
+                        south.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }else{
+                        south.setText("South");
+                    }
                     add(south);
                     break;
                 case West:
+                    if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
+                        west.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }
                     add(west);
                     break;
                 case Climb:
+                    if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
+                        climb.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }else{
+                        climb.setText("Climb");
+                    }
                     add(climb);
                     break;
                 case Other:
-                    other.setText(aRoom.getAdjacentRooms().get(x).getOtherKey());
+                    other.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     add(other);
                     break;
                         
