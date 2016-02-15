@@ -37,7 +37,7 @@ public class TheGameEngine {
     
     public void movePlayer(String movementPath){
         // Goes north
-        for(int x = 0; x > player.getCurrentRoom().getAdjacentRooms().size(); x++){
+        for(int x = 0; x < player.getCurrentRoom().getAdjacentRooms().size(); x++){
             if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() != null){
                 if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() == movementPath){
                     player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
@@ -45,21 +45,69 @@ public class TheGameEngine {
                 }else{
                   //was not  a match continue the loop  
                 }
+            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.North && movementPath == "North"){
+                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
+                roomEntranceEvent();
+            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.East && movementPath == "East"){
+                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
+                roomEntranceEvent();
+            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.South && movementPath == "South"){
+                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
+                roomEntranceEvent();
+            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.West && movementPath == "West"){
+                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
+                roomEntranceEvent();
+            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.Climb && movementPath == "Climb"){
+                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom()); 
+                roomEntranceEvent();
             }else{
-            switch(player.getCurrentRoom().getAdjacentRooms().get(x).direction){
+                //somthing went wrong continue the loop
+            }
+               
+                
+                /*
+                switch(player.getCurrentRoom().getAdjacentRooms().get(x).direction){
                 case North:
+                    if(movementPath == "North"){
+                        
+                    }
+                    //if not beeak the switch and continue the loop
+                    break;
+                case East:
+                    if(movementPath == "East"){
+                        
+                    }
+                    break;
+                case West:
+                    if(movementPath == "West"){
+                        
+                    }
+                    break;
+                case South:
+                    if(movementPath == "South"){
+                        
+                    }
+                    break;
+                case Climb:
+                    if(movementPath == "Climb"){
+                        
+                    }
                     break;
                 default:
                     view.updateDescription("opps an error occured in moving the player");
                     break;
-                }
-            }
+                }*/
+            
     }
 }
 
     private void roomEntranceEvent() {
         view.updateDescription(player.getCurrentRoom().getDescription());
         view.basicButtonSet();
+    }
+
+    public void callMoveSet() {
+        view.movementButtonSet(player.getCurrentRoom());
     }
 }
 

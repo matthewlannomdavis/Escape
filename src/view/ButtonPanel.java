@@ -39,15 +39,18 @@ public class ButtonPanel extends JPanel {
     
     private void clearButtonArea(){
         removeAll();
+        repaint();
         validate();
+        System.out.println("got though clear button area");
     }
     
     public void movementButtons(Room aRoom){
         clearButtonArea();
-        
-        for(int x = 0; x > aRoom.getAdjacentRooms().size(); x++){
+        for(int x = 0; x < aRoom.getAdjacentRooms().size(); x++){ 
+            
             switch(aRoom.getAdjacentRooms().get(x).direction){
                 case North:
+                    
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         north.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -64,6 +67,7 @@ public class ButtonPanel extends JPanel {
                     add(east);
                     break;
                 case South:
+                    
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         south.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -91,6 +95,9 @@ public class ButtonPanel extends JPanel {
                     break;
                         
             }
+            this.repaint();
+            validate();
+            
         }
     }
     
@@ -101,6 +108,36 @@ public class ButtonPanel extends JPanel {
     public Button getNorthButton() {
         return north;
     }
+    public Button getMoveButton() {
+        return move;
+    }
 
+    public Button getSearchButton() {
+        return search;
+    }
+
+    public Button getBagButton() {
+        return bag;
+    }
+
+    public Button getWestButton() {
+        return west;
+    }
+
+    public Button getEastButton() {
+        return east;
+    }
+
+    public Button getSouthButton() {
+        return south;
+    }
+
+    public Button getOtherButton() {
+        return other;
+    }
+
+    public Button getClimbButton() {
+        return climb;
+    }
 }
     

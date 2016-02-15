@@ -29,6 +29,11 @@ public class TheView {
         }
         
     }
+    class moveButtonListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            parent.callMoveSet();
+        }
+    }
     
     public TheView(TheGameEngine ge) {
         parent = ge;
@@ -44,6 +49,10 @@ public class TheView {
         mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel); 
         buttonPanel.getNorthButton().addActionListener(new movementListener());
+        buttonPanel.getEastButton().addActionListener(new movementListener());
+        buttonPanel.getSouthButton().addActionListener(new movementListener());
+        buttonPanel.getWestButton().addActionListener(new movementListener());
+        buttonPanel.getMoveButton().addActionListener(new moveButtonListener());
         mainWindow.validate();
         mainWindow.setVisible(true);
     }
