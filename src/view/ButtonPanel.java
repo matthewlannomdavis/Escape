@@ -78,6 +78,8 @@ public class ButtonPanel extends JPanel {
                 case West:
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         west.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                    }else{
+                        west.setText("West");
                     }
                     add(west);
                     break;

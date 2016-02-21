@@ -19,10 +19,12 @@ public class TheView {
     
     class movementListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
+            System.out.println("movementlistenerCalled");
             Object theListenedObject = event.getSource();
             Button aButton = null;
             if(theListenedObject instanceof Button){
                 aButton = (Button)theListenedObject;
+                System.out.println(aButton.getText());
                 parent.movePlayer(aButton.getText());
         }
             
@@ -52,6 +54,8 @@ public class TheView {
         buttonPanel.getEastButton().addActionListener(new movementListener());
         buttonPanel.getSouthButton().addActionListener(new movementListener());
         buttonPanel.getWestButton().addActionListener(new movementListener());
+        buttonPanel.getOtherButton().addActionListener(new movementListener());
+        buttonPanel.getClimbButton().addActionListener(new movementListener());
         buttonPanel.getMoveButton().addActionListener(new moveButtonListener());
         mainWindow.validate();
         mainWindow.setVisible(true);
@@ -72,6 +76,10 @@ public class TheView {
     }
     
     public void movementButtonSet(Room aRoom){
+        
+        for(int x = 0; x < aRoom.getAdjacentRooms().size(); x++){
+            descriptionPanel.updateText(aRoom.getAdjacentRooms().get(x).getEgressDescriptionText());
+        }
         buttonPanel.movementButtons(aRoom);
     }
     
