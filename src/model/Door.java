@@ -7,6 +7,23 @@ public class Door extends GameObject{
     private boolean isDoorLocked;
     private String nameOfNeededKey;
     
+    public Door(String doorName, String doorDescription, int integraty, boolean lock, String neededKey){
+        this.setName(doorName);
+        this.setDescription(doorDescription);
+        this.setObjectIntegraty(integraty);
+        isDoorLocked = lock;
+        nameOfNeededKey = neededKey;
+    }
+    public Door(String doorName, String doorDescription, int integraty, boolean lock, String neededKey, Room alphaTarget, Room betaTarget){
+        this.setName(doorName);
+        this.setDescription(doorDescription);
+        this.setObjectIntegraty(integraty);
+        isDoorLocked = lock;
+        nameOfNeededKey = neededKey;
+        alphaTargetRoom = alphaTarget;
+        betaTargetRoom = betaTarget;
+    }
+    
     public Room getAlphaTargetRoom() {
         return alphaTargetRoom;
     }
