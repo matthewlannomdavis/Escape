@@ -10,6 +10,9 @@ import model.Being;
 public class Player extends Being {
     private int currentExperiance;
     private int neededExperiance;
+    private enum playersClass{
+        warrior, mage, rouge
+    } 
 
     public int getCurrentExperiance() {
         return currentExperiance;

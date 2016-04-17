@@ -17,10 +17,17 @@ public class Being {
     private int beingDexterity;
     private int beingMind;
     private int beingFlexibility;
-    private int level;
     private ArrayList<Skill> skills;
     private model.Room currentRoom;
 	
+      public ArrayList<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(ArrayList<Skill> skills) {
+        this.skills = skills;
+    }
+    
     public model.Room getCurrentRoom() {
 		return currentRoom;
 	}
