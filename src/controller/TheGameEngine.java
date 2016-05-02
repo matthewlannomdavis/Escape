@@ -38,11 +38,13 @@ public class TheGameEngine {
 //        view.getNorthButton().addActionListener(new northButton());
     }
     
-    public void movePlayer(String movementPath){
+    public void movePlayer(Room targetRoom){
        System.out.println("move player called");
-       System.out.println(movementPath);
+        player.setCurrentroom(targetRoom); 
+        roomEntranceEvent();
         // Goes north
-        for(int x = 0; x < player.getCurrentRoom().getAdjacentRooms().size(); x++){
+       /*old before change holding onto temporaly
+       for(int x = 0; x < player.getCurrentRoom().getAdjacentRooms().size(); x++){
             if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() != null){
                 System.out.println(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption());
                 if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() == movementPath){
@@ -109,9 +111,9 @@ public class TheGameEngine {
                 default:
                     view.updateDescription("opps an error occured in moving the player");
                     break;
-                }*/
-            
-    }
+                }
+           
+    }*/
 }
 
     private void roomEntranceEvent() {

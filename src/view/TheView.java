@@ -25,7 +25,7 @@ public class TheView {
             if(theListenedObject instanceof Button){
                 aButton = (Button)theListenedObject;
                 System.out.println(aButton.getText());
-                parent.movePlayer(aButton.getText());
+                parent.movePlayer(aButton.getAttachedRoom());
         }
             
         }

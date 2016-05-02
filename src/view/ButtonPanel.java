@@ -50,7 +50,7 @@ public class ButtonPanel extends JPanel {
             
             switch(aRoom.getAdjacentRooms().get(x).direction){
                 case North:
-                    
+                    north.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         north.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -59,6 +59,7 @@ public class ButtonPanel extends JPanel {
                     add(north);
                     break;
                 case East:
+                     east.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         east.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -67,15 +68,18 @@ public class ButtonPanel extends JPanel {
                     add(east);
                     break;
                 case South:
-                    
+                    south.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         south.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
+                       
                     }else{
                         south.setText("South");
+                        
                     }
                     add(south);
                     break;
                 case West:
+                    west.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         west.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -84,6 +88,7 @@ public class ButtonPanel extends JPanel {
                     add(west);
                     break;
                 case Climb:
+                    climb.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     if(aRoom.getAdjacentRooms().get(x).getTheCaption() != null){
                         climb.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     }else{
@@ -92,6 +97,7 @@ public class ButtonPanel extends JPanel {
                     add(climb);
                     break;
                 case Other:
+                   other.setAttachedRoom(aRoom.getAdjacentRooms().get(x).getTargetRoom());
                     other.setText(aRoom.getAdjacentRooms().get(x).getTheCaption());
                     add(other);
                     break;
