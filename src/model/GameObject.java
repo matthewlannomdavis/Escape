@@ -6,6 +6,8 @@ public class GameObject {
     private String name;
     private String description;
     private int objectIntegraty;
+    private boolean locked;
+    private boolean boogieTraped;
 
     public int getObjectIntegraty() {
         return objectIntegraty;
@@ -31,6 +33,8 @@ public class GameObject {
         this.description = description;
     }
     
-    
+   public void objectAction(){
+       
+   } 
     
 }

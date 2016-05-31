@@ -5,7 +5,8 @@ public class Room {
 	private String name;
 	private String description;
 	private ArrayList<RoomEgress> adjacentRooms = new ArrayList<RoomEgress>();
-	
+	private ArrayList<GameObject> objectsInRoom = new ArrayList<GameObject>();
+        
 	public Room(String aName, String aDescription) {
 		name = aName;
 		description = aDescription;
@@ -30,4 +31,10 @@ public class Room {
 	public String getDescription() {
 		return description;
 	}
+        public void addObjectToRoom(GameObject gObject){
+            
+        }
+        public ArrayList<GameObject> getRoomObjects(){
+            return objectsInRoom;
+        }
 }

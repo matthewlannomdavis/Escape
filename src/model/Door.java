@@ -40,7 +40,7 @@ public class Door extends GameObject{
         this.betaTargetRoom = betaTargetRoom;
     }
 
-    public boolean isIsDoorLocked() {
+    public boolean isTheDoorLocked() {
         return isDoorLocked;
     }
 
@@ -55,6 +55,15 @@ public class Door extends GameObject{
     public void setNameOfNeededKey(String nameOfNeededKey) {
         this.nameOfNeededKey = nameOfNeededKey;
     }
-
+    
+    public Room objectAction(Room currentRoom){
+        if(currentRoom == alphaTargetRoom){
+            return betaTargetRoom;
+        }else if(currentRoom == betaTargetRoom){
+            return alphaTargetRoom;
+        }else{
+            return currentRoom;
+        }
+    }
     
 }
