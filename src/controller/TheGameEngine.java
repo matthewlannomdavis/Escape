@@ -9,7 +9,6 @@ import view.*;
 
 public class TheGameEngine {
     //init basic needed objects
-    //gui, player, rooms, and other calls
     TheView view;
     Player player;
     Apartment yourApartment;
@@ -17,16 +16,7 @@ public class TheGameEngine {
     public void startGame(){
 	player = new Player();
         // 1. Generate map
-	// TODO: Make this gooder. Right now, just adding a house and a "room" to the south of it.
 	yourApartment = new Apartment(player.getBeingsName());
-        
-        /*Room room = new Room("Outside House", "You are standing outside of a house. It is white and made of brick. The front door is locked, but a window seems to be ajar. Before you is a closed mailbox.");
-	Room roomToTheSouth = new Room("South of House", "You are standing in a field south of the house. There's really nothing here.");
-	RoomEgress pathToTheSouth = new RoomEgress(directionKey.South, roomToTheSouth, "There is a path leading to the south.");
-	RoomEgress pathToTheNorth = new RoomEgress(directionKey.North, room, "There's an inviting path leading to the north. Much more interesting than what you see here.");
-	room.addRoomEgress(pathToTheSouth);
-	roomToTheSouth.addRoomEgress(pathToTheNorth);
-        */
         // 2. Create character
 	
 
@@ -35,85 +25,12 @@ public class TheGameEngine {
 
         view = new TheView(this);	
 	view.updateDescription("Welcome to Escape!");
-//        view.getNorthButton().addActionListener(new northButton());
     }
     
     public void movePlayer(Room targetRoom){
        System.out.println("move player called");
         player.setCurrentroom(targetRoom); 
         roomEntranceEvent();
-        // Goes north
-       /*old before change holding onto temporaly
-       for(int x = 0; x < player.getCurrentRoom().getAdjacentRooms().size(); x++){
-            if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() != null){
-                System.out.println(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption());
-                if(player.getCurrentRoom().getAdjacentRooms().get(x).getTheCaption() == movementPath){
-                    System.out.println("plaer should be going to " + player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom().getName());
-                    player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
-                    roomEntranceEvent();
-                    break;
-                }else{
-                  //was not  a match continue the loop  
-                }
-            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.North && movementPath == "North"){
-                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
-                roomEntranceEvent();
-                 break;
-            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.East && movementPath == "East"){
-                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
-                roomEntranceEvent();
-                 break;
-            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.South && movementPath == "South"){
-                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
-                roomEntranceEvent();
-                 break;
-            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.West && movementPath == "West"){
-                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom());
-                roomEntranceEvent();
-                 break;
-            }else if(player.getCurrentRoom().getAdjacentRooms().get(x).direction == RoomEgress.directionKey.Climb && movementPath == "Climb"){
-                player.setCurrentroom(player.getCurrentRoom().getAdjacentRooms().get(x).getTargetRoom()); 
-                roomEntranceEvent();
-                 break;
-            }else{
-                //somthing went wrong continue the loop
-            }
-               
-                
-                /*
-                switch(player.getCurrentRoom().getAdjacentRooms().get(x).direction){
-                case North:
-                    if(movementPath == "North"){
-                        
-                    }
-                    //if not beeak the switch and continue the loop
-                    break;
-                case East:
-                    if(movementPath == "East"){
-                        
-                    }
-                    break;
-                case West:
-                    if(movementPath == "West"){
-                        
-                    }
-                    break;
-                case South:
-                    if(movementPath == "South"){
-                        
-                    }
-                    break;
-                case Climb:
-                    if(movementPath == "Climb"){
-                        
-                    }
-                    break;
-                default:
-                    view.updateDescription("opps an error occured in moving the player");
-                    break;
-                }
-           
-    }*/
 }
 
     private void roomEntranceEvent() {

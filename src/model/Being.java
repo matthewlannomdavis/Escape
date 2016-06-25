@@ -14,6 +14,7 @@ public class Being {
     private int beingCurrentLife;
     private int beingMaxLife;
     private int beingCurrentSpirit;
+    private int beingMaxSpirit;
     private int beingDexterity;
     private int beingMind;
     private int beingFlexibility;
@@ -110,6 +111,9 @@ public class Being {
      */
     public int getBeingMaxLife() {
         return beingMaxLife;
+    }
+    public int getBeingMaxSpirit(){
+        return beingMaxSpirit;
     }
 
     /**

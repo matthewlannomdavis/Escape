@@ -7,7 +7,7 @@ import javax.swing.border.EmptyBorder;
 import model.Player;
 
 public class StatsPanel extends JPanel {
-    JLabel name, strength, speed, defense, dextarity, mind, flexibility, spirit, health;
+    JLabel name, strength, speed, defense, dextarity, mind, flexibility, spirit, health, exp;
     
     public StatsPanel() {
         name = new JLabel("nobody");
@@ -19,7 +19,7 @@ public class StatsPanel extends JPanel {
         flexibility = new JLabel("0");
         spirit = new JLabel("0");
         health = new JLabel("0");
-        
+        exp = new JLabel("0");
         
         setSize(200,600);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -41,8 +41,21 @@ public class StatsPanel extends JPanel {
         this.add(mind);
         this.add(new JLabel("Flexibilty"));
         this.add(flexibility);
+        this.add(new JLabel("Experiance"));
+        this.add(exp);
     }
     
-    public void update(Player aPlayer){    
+    public void update(Player aPlayer){
+        health.setText(aPlayer.getBeingCurrentLife() + " /" + aPlayer.getBeingCurrentLife());
+        spirit.setText(aPlayer.getBeingCurrentSpirit() + " /"+ aPlayer.getBeingMaxSpirit());
+        strength.setText("" + aPlayer.getBeingStrength());
+        defense.setText(""+ aPlayer.getBeingDefense());
+        speed.setText("" + aPlayer.getBeingSpeed());
+        mind.setText(""+ aPlayer.getBeingMind());
+        dextarity.setText("" + aPlayer.getBeingDexterity());
+        flexibility.setText("" + aPlayer.getBeingFlexibility());
+        exp.setText(aPlayer.getCurrentExperiance()+ " /" + aPlayer.getNeededExperiance());
+        
+        
     }
 }
