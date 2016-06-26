@@ -10,6 +10,7 @@ public class ButtonPanel extends JPanel {
    
     private Button move, search, bag; 
     private Button north, west, east, south, other, climb;
+    private Button GO1, GO2, GO3, GO4, GO5, GO6;
     
     public ButtonPanel() {
         super();
@@ -108,6 +109,31 @@ public class ButtonPanel extends JPanel {
             
         }
     }
+    void roomObjectsButtons(Room currentRoom) {
+        clearButtonArea();
+        for(int x = 0; x < currentRoom.getRoomObjects().size(); x++){
+            switch(x){
+                case 0:
+                GO1 = new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                break;
+                case 1:
+                    GO2 =  new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                    break;
+                case 2:
+                    GO3 = new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                    break;
+                case 3:
+                    GO4 =  new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                    break;
+                case 4:
+                    GO5 =  new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                    break;
+                case 5:
+                    GO6 =  new Button(currentRoom.getRoomObjects().get(x).getName(), currentRoom.getRoomObjects().get(x));
+                    break;
+            }
+        }
+    }
     
     public void update(Player aPlayer) {
         
@@ -147,5 +173,7 @@ public class ButtonPanel extends JPanel {
     public Button getClimbButton() {
         return climb;
     }
+
+
 }
     

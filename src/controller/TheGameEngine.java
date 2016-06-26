@@ -12,6 +12,7 @@ public class TheGameEngine {
     TheView view;
     Player player;
     Apartment yourApartment;
+    
     //generate gui
     public void startGame(){
 	player = new Player();
@@ -31,7 +32,7 @@ public class TheGameEngine {
        System.out.println("move player called");
         player.setCurrentroom(targetRoom); 
         roomEntranceEvent();
-}
+    }
 
     private void roomEntranceEvent() {
        System.out.println("plaer should be going to " + player.getCurrentRoom().getName());
@@ -42,6 +43,14 @@ public class TheGameEngine {
 
     public void callMoveSet() {
         view.movementButtonSet(player.getCurrentRoom());
+    }
+    public void callRoomsObjects(){
+        view.roomObjectButtonSet(player.getCurrentRoom());
+    }
+
+    public void displayObservedObject(GameObject gameObject) {
+       view.updateDescription(gameObject.getDescription());
+       
     }
 }
 

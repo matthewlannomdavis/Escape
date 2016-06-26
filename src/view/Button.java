@@ -27,5 +27,8 @@ public class Button extends JButton {
    public Room getAttachedRoom(){
        return attachedRoom;
    }
+   public GameObject getGameObject(){
+       return attachedGameObject;
+   }
    
 }

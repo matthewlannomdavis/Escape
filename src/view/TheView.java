@@ -16,7 +16,7 @@ public class TheView {
     private BagPanel bagPanel;
     private ProgressPanel progressPane;
     private DescriptionPanel descriptionPanel;
-    
+
     class movementListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
             System.out.println("movementlistenerCalled");
@@ -26,17 +26,30 @@ public class TheView {
                 aButton = (Button)theListenedObject;
                 System.out.println(aButton.getText());
                 parent.movePlayer(aButton.getAttachedRoom());
-        }
-            
-        }
-        
+            }    
+        }      
     }
     class moveButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
             parent.callMoveSet();
         }
     }
-    
+    class objectObservedListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            Object theListenedObject = event.getSource();
+            Button aButton = null;
+            if(theListenedObject instanceof Button){
+                aButton = (Button)theListenedObject;
+                System.out.println(aButton.getText());
+                parent.displayObservedObject(aButton.getGameObject());
+        }
+       }      
+    }
+    class lookAroundButtonListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            parent.callRoomsObjects();
+        }
+    }
     public TheView(TheGameEngine ge) {
         parent = ge;
         
@@ -82,13 +95,13 @@ public class TheView {
         }
         buttonPanel.movementButtons(aRoom);
     }
-    
-    public void updateDescription(String description){
-        descriptionPanel.updateText(description);
-        
+     public void roomObjectButtonSet(Room currentRoom) {
+        buttonPanel.roomObjectsButtons(currentRoom);
     }
-    
+    public void updateDescription(String description){
+        descriptionPanel.updateText(description);    
+    }
     public void updatePlayerStats(){
-        
+        //updates player states with anychanges will need to be called often
     }
 }
