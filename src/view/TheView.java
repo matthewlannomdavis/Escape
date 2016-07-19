@@ -17,6 +17,8 @@ public class TheView {
     private ProgressPanel progressPane;
     private DescriptionPanel descriptionPanel;
 
+
+
     class movementListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
             System.out.println("movementlistenerCalled");
@@ -45,6 +47,21 @@ public class TheView {
         }
        }      
     }
+    class newGameListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            parent.startNewGame();
+        }
+    }
+    class loadGameListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            parent.loadGameCall();
+        }
+    }
+    class gameOptionsListener implements ActionListener{
+        public void actionPerformed(ActionEvent event){
+            parent.optionsCall();
+        }
+    }
     class lookAroundButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent event){
             parent.callRoomsObjects();
@@ -56,10 +73,19 @@ public class TheView {
         mainWindow = new JFrame("Escape");
         mainWindow.setSize(800, 800);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainWindow.setResizable(false);
+        //mainWindow.setResizable(false);
         descriptionPanel = new DescriptionPanel();
         buttonPanel = new ButtonPanel();
-        statsPanel = new StatsPanel();
+        statsPanel = new StatsPanel(); 
+        
+       
+    }
+
+    public void mainScreen() {
+        //clear screen
+       
+        mainWindow.getContentPane().removeAll();
+        //holds a basic layout for the screen
         mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
         mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel); 
@@ -73,15 +99,21 @@ public class TheView {
         mainWindow.validate();
         mainWindow.setVisible(true);
     }
-
-    public void createScreen() {
-        //holds a basic layout for the screen
-        mainWindow.getContentPane().add(BorderLayout.CENTER, descriptionPanel);
+    public void titleScreenCall(){
+        mainWindow.getContentPane().removeAll();
+        //add image to cent of screen
+        
+        //add buttons to start the game here
+        buttonPanel.getNewGame().addActionListener(new newGameListener());
+        buttonPanel.getLoadGame().addActionListener(new loadGameListener());
+        buttonPanel.getGameOptions().addActionListener(new gameOptionsListener());
         mainWindow.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
-        mainWindow.getContentPane().add(BorderLayout.WEST, statsPanel);
+        buttonPanel.mainMenuButtons();
         mainWindow.validate();
+        mainWindow.setVisible(true);
+        System.out.println("at the end of views create title screen");
+       
     }
-    
     public void basicButtonSet(){
         
         buttonPanel.addBasicButtons();
@@ -103,5 +135,8 @@ public class TheView {
     }
     public void updatePlayerStats(){
         //updates player states with anychanges will need to be called often
+    }
+    public void opening() {
+        
     }
 }

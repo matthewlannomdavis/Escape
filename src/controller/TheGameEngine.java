@@ -15,17 +15,31 @@ public class TheGameEngine {
     
     //generate gui
     public void startGame(){
-	player = new Player();
-        // 1. Generate map
-	yourApartment = new Apartment(player.getBeingsName());
-        // 2. Create character
-	
-
-        // 3. Place character @ start location
+       player = new Player();
+       titleScreenCall();
+        
+    }
+    public void titleScreenCall(){
+        view = new TheView(this);
+        view.titleScreenCall();
+        System.out.println("title screen called");
+    }
+    public void startNewGame(){
+        view.mainScreen();
+        view.opening();
+    }
+    public void createCharacter(){
+        
+    }
+    public void enterfirstStage(){
+        yourApartment = new Apartment(player.getBeingsName());
         player.setCurrentroom(yourApartment.getStarterRoom());
-
-        view = new TheView(this);	
-	view.updateDescription("Welcome to Escape!");
+    }
+    public void loadGameCall(){
+        //for later use when loading from a save file will be possible
+    }
+    public void optionsCall(){
+        //for possible later use when there are different options to deal with
     }
     
     public void movePlayer(Room targetRoom){
